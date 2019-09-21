@@ -1,4 +1,5 @@
 function solution(record) {
+    let test;
     var answer = [];
     let arr1 = [];
     let user = [];
