@@ -11,15 +11,10 @@ function solution(clothes) {
 
     let result = Object.values(state);
 
-    let length_arr =[];
     result.forEach((v,i)=>{
-        length_arr.push(v.length);
+        answer = answer * (v.length+1); //안입을 경우의수 +1
     });
-    
-    length_arr.forEach((v)=>{
-        answer = answer * (v+1);
-    });
-    answer--;
+    answer--;   //마지막 다 안입을었을 경우의 수 
 
     return answer;
 }
