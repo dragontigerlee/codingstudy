@@ -20,6 +20,9 @@ function solution(number, k) {
     let filteredArr = arr.filter((v,i)=>{
         return i >= maxIndex; 
     });
+
+
+    
     console.log(filteredArr);
     
     return answer;
