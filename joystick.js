@@ -1,3 +1,4 @@
+//A갯수 처리 chk===1 name[lastindex], chk===2 name[1]
 function check_a(name,chk){
     let val=0;
     if(chk===1){
@@ -19,6 +20,7 @@ function check_a(name,chk){
     }
 }
 
+//N~Z 카운트 구하기
 function check_num(val){
     let arr = [-1,90,89,88,87,86,85,84,83,82,81,80,79,78];    
     for(let i=0; i<arr.length; i++){
