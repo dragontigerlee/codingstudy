@@ -21,11 +21,7 @@ function solution(arr, location) {
                 break;
             }else{
                 answer++;
-                if(target===0){
-                   target = arr.length-1;
-                }else{
-                    target--;
-                }
+                target--;
             }
         }    
     }
