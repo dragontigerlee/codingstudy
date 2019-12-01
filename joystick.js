@@ -51,6 +51,8 @@ function solution(name) {
         let first_num = check_num(name[0].charCodeAt(0));
         answer = answer + first_num;
     }
+    
+
     //정방향
     if((left_A == right_A) || (left_A < right_A)) {
         for(let i=1; i<name.length; i++){
