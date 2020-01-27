@@ -16,7 +16,7 @@ function solution(skill, skill_trees) {
                             break;
                         }
                     }
-                    if(j < skill_idx) {
+                    if(j < skill_idx || Math.abs(skill_idx - j) >1) {
                         next_step="T";
                         return_val="F";
                         break;
