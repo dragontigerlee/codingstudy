@@ -3,7 +3,7 @@ function solution(n, results) {
     var answer = 0;
 
     // 그래프 초기화
-    var graph = Array.from(Array(n+1), () => Array(n+1).fill(false));   
+    var graph = Array.from({length:n+1}, () => Array(n+1).fill(false));   
 
     // 확실히 이기는 사람 true 초기화
     results.forEach((v) => {
