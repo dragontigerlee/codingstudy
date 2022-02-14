@@ -1,0 +1,67 @@
+<script>
+/* 
+이진트리
+주어진 문자열을 가지고 완전 이진트리를 만들고
+다음과 같은 형태로 문자열을 읽은 값을 반환하시오.
+
+Input : let arr = ['A','B','C','D','E','F','G','H']
+Output : ['H','D','B','E','A','F','C','G']
+
+       A
+    B     C
+  D  E  F  G
+H
+*/
+
+let root;
+let answer = [];
+
+class Node {
+    constructor(data){
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+function makingTree(msg, root, i){
+    //1.Node 만들기
+    //2.left 값 넣기
+    //3.right 값 넣기
+    //4.Node 반환
+
+    //THINKGING
+    //중->왼->오, 중->왼->오 계속 반복되므로 재귀함수를 생각하자!
+    //재귀함수는 항상 종료조건을 생각하자!
+    if(i<msg.length) {
+        root = new Node(msg[i]); 
+        root.left = makingTree(msg, root.left, 2*i+1);
+        root.right = makingTree(msg, root.right, 2*i+2);
+    }
+
+    return root;  
+}
+
+function Inorder(root){
+    //왼,중,오 반복 -> 재귀함수
+    if(root != null){
+        Inorder(root.left);
+        answer.push(root.data);
+        Inorder(root.right);
+    }
+}
+
+function solution(msg){
+    let tree = makingTree(msg,root,0);
+    Inorder(tree);
+    return answer;
+}
+
+console.log(solution('ABCDEFGH'));
+
+
+</script>
+<html>
+    <body>
+    </body>
+</html>
