@@ -53,7 +53,20 @@ const id = prompt('ID를 입력하세요.');
 const pw = prompt('PW를 입력하세요');
 const userStorage = new UserStorage();
 
-userStorage.loginUser(id,pw)
-.then(id => userStorage.getRoles(id))
-.then(user => alert(`hello ${user.name}!! you are a ${user.role} role!`))
-.catch(console.log)
+// userStorage.loginUser(id,pw)
+// .then(id => userStorage.getRoles(id))
+// .then(user => alert(`hello ${user.name}!! you are a ${user.role} role!`))
+// .catch(console.log)
+
+async function checkUser() {
+    try {
+        const userId = await userStorage.loginUser(id,pw);
+        const user = await userStorage.getRoles(userId);
+        alert(`hello ${user.name}!! you are a ${user.role} role!`);
+
+    }catch(error) {
+        console.log(error);
+    }
+}
+
+checkUser();
