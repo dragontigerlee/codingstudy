@@ -1,0 +1,1 @@
+// number, string, boolean, null, undefined 뺴고는 모두 Object 
